@@ -1,26 +1,25 @@
 package wowoniu167.github.game;
 
-import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Image;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
-
 import javax.swing.JFrame;
 
 //import com.sun.glass.events.WindowEvent;
 /**
  * 游戏主窗口
  * 
- * @叶立鹏
+ * @author 叶立鹏
  */
 public class MyGameFrame extends JFrame {
 
 	private static final long serialVersionUID = 1L;
 
-	Image plane = GameUtil.getImage(" ");
+	Image planeimg = GameUtil.getImage(" ");
 	Image bg = GameUtil.getImage(" ");
-
+	int planeX=250,planeY=250;
+	Plane plane2 = new Plane(planeimg, 300, 300);
 	/**
 	 * 画图方法
 	 */
@@ -32,7 +31,8 @@ public class MyGameFrame extends JFrame {
 		// g.fillRect(50, 50, 10, 10);
 		// g.setColor(c);
 		g.drawImage(bg, 0, 0, null);
-		g.drawImage(plane, 250, 250, null);
+		g.drawImage(planeimg, planeX, planeY, null);
+		planeX++;
 	}
 
 	public void launchFrame() {
@@ -49,7 +49,11 @@ public class MyGameFrame extends JFrame {
 			}
 		});
 	}
-
+/**
+ * 
+ * @author ThinkPad
+ *窗口重画，内部类
+ */
 	class PainThreed extends Thread {
 		public void run() {
 			while (true) {
