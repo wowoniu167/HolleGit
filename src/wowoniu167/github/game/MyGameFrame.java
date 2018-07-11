@@ -6,7 +6,6 @@ import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import javax.swing.JFrame;
 
-//import com.sun.glass.events.WindowEvent;
 /**
  * 游戏主窗口
  * 
